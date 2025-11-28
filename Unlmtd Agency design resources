@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Design Checklist | Unlmtd Agency</title>
+  
+  <!-- Google Fonts - Instrument Sans & Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Custom Properties - Unlmtd Agency Brand */
+    :root {
+      --unlmtd-blue: #21409a;
+      --unlmtd-yellow: #FFDE17;
+      --unlmtd-red: #BE1E2D;
+      --unlmtd-black: #1D1D1D;
+      --unlmtd-white: #ffffff;
+      
+      /* Extended palette */
+      --blue-light: #e8ecf5;
+      --blue-medium: #3a5bb8;
+      --yellow-light: #fff9db;
+      --red-light: #fceaec;
+      --grey-100: #f7f7f7;
+      --grey-200: #eeeeee;
+      --grey-300: #d4d4d4;
+      --grey-500: #737373;
+      --grey-700: #404040;
+    }
+    
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Base Typography */
+    body {
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--unlmtd-black);
+      background-color: var(--unlmtd-white);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+    
+    /* Container */
+    .unlmtd-checklist {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    
+    /* Header */
+    .checklist-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .checklist-header__badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background-color: var(--unlmtd-blue);
+      color: var(--unlmtd-white);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    
+    .checklist-header__title {
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--unlmtd-black);
+      margin-bottom: 12px;
+    }
+    
+    .checklist-header__subtitle {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 18px;
+      color: var(--grey-500);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* Progress Bar */
+    .progress-container {
+      background-color: var(--grey-100);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    
+    .progress-label {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--unlmtd-black);
+    }
+    
+    .progress-percentage {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--unlmtd-blue);
+    }
+    
+    .progress-bar {
+      height: 8px;
+      background-color: var(--grey-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-bar__fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--unlmtd-blue), var(--blue-medium));
+      border-radius: 4px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--grey-500);
+    }
+    
+    /* Quick Reference */
+    .quick-reference {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      padding: 24px;
+      background-color: var(--blue-light);
+      border-left: 4px solid var(--unlmtd-blue);
+      margin-bottom: 40px;
+    }
+    
+    .quick-reference__item {
+      text-align: center;
+    }
+    
+    .quick-reference__label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--unlmtd-blue);
+      margin-bottom: 4px;
+    }
+    
+    .quick-reference__value {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px;
+      color: var(--unlmtd-black);
+    }
+    
+    /* Section */
+    .checklist-section {
+      background-color: var(--unlmtd-white);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    
+    .checklist-section.is-complete {
+      border-color: var(--unlmtd-blue);
+      background-color: var(--blue-light);
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .section-header:hover {
+      background-color: var(--grey-100);
+    }
+    
+    .is-complete .section-header:hover {
+      background-color: var(--blue-light);
+    }
+    
+    .section-header__left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .section-number {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--grey-100);
+      border-radius: 50%;
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      color: var(--unlmtd-black);
+      flex-shrink: 0;
+    }
+    
+    .is-complete .section-number {
+      background-color: var(--unlmtd-blue);
+      color: var(--unlmtd-white);
+    }
+    
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px;
+      color: var(--unlmtd-black);
+    }
+    
+    .section-progress {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 13px;
+      color: var(--grey-500);
+      margin-top: 2px;
+    }
+    
+    .section-header__right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .section-progress-bar {
+      width: 80px;
+      height: 4px;
+      background-color: var(--grey-200);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    
+    .section-progress-bar__fill {
+      height: 100%;
+      background-color: var(--unlmtd-blue);
+      transition: width 0.3s ease;
+    }
+    
+    .section-toggle {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--grey-500);
+      transition: transform 0.3s ease;
+    }
+    
+    .section-toggle.is-open {
+      transform: rotate(180deg);
+    }
+    
+    /* Section Content */
+    .section-content {
+      display: none;
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--grey-200);
+    }
+    
+    .section-content.is-open {
+      display: block;
+    }
+    
+    .is-complete .section-content {
+      border-top-color: rgba(33, 64, 154, 0.2);
+    }
+    
+    /* Checklist Items */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      margin-top: 8px;
+      background-color: var(--grey-100);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .checklist-item:hover {
+      background-color: var(--grey-200);
+    }
+    
+    .checklist-item.is-checked {
+      background-color: var(--blue-light);
+    }
+    
+    .is-complete .checklist-item {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .checklist-item__checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--grey-300);
+      border-radius: 3px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      margin-top: 1px;
+    }
+    
+    .checklist-item.is-checked .checklist-item__checkbox {
+      background-color: var(--unlmtd-blue);
+      border-color: var(--unlmtd-blue);
+    }
+    
+    .checklist-item__checkbox svg {
+      width: 12px;
+      height: 12px;
+      color: var(--unlmtd-white);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.2s ease;
+    }
+    
+    .checklist-item.is-checked .checklist-item__checkbox svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .checklist-item__text {
+      flex: 1;
+      font-size: 15px;
+      color: var(--unlmtd-black);
+      transition: color 0.2s ease;
+    }
+    
+    .checklist-item.is-checked .checklist-item__text {
+      color: var(--grey-500);
+      text-decoration: line-through;
+    }
+    
+    .checklist-item__badge {
+      padding: 3px 8px;
+      background-color: var(--yellow-light);
+      border: 1px solid var(--unlmtd-yellow);
+      color: var(--unlmtd-black);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    
+    /* File Formats Section */
+    .formats-section {
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+    
+    .formats-section__title {
+      font-size: 28px;
+      margin-bottom: 24px;
+      color: var(--unlmtd-black);
+    }
+    
+    .formats-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--unlmtd-white);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .formats-table th {
+      background-color: var(--grey-100);
+      padding: 14px 16px;
+      text-align: left;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--grey-700);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    
+    .formats-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-200);
+      font-size: 14px;
+    }
+    
+    .formats-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .format-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background-color: var(--blue-light);
+      color: var(--unlmtd-blue);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+    
+    .type-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 500;
+      border-radius: 2px;
+    }
+    
+    .type-badge--vector {
+      background-color: var(--blue-light);
+      color: var(--unlmtd-blue);
+    }
+    
+    .type-badge--raster {
+      background-color: var(--yellow-light);
+      color: var(--unlmtd-black);
+    }
+    
+    .essential-check {
+      color: var(--unlmtd-blue);
+    }
+    
+    /* Tips Section */
+    .tips-section {
+      margin-bottom: 48px;
+    }
+    
+    .tips-section__title {
+      font-size: 28px;
+      margin-bottom: 24px;
+      color: var(--unlmtd-black);
+    }
+    
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    
+    .tip-card {
+      padding: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--grey-200);
+    }
+    
+    .tip-card--blue {
+      background-color: var(--blue-light);
+      border-color: rgba(33, 64, 154, 0.2);
+    }
+    
+    .tip-card--yellow {
+      background-color: var(--yellow-light);
+      border-color: rgba(255, 222, 23, 0.5);
+    }
+    
+    .tip-card--red {
+      background-color: var(--red-light);
+      border-color: rgba(190, 30, 45, 0.2);
+    }
+    
+    .tip-card__title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      color: var(--unlmtd-black);
+      margin-bottom: 8px;
+    }
+    
+    .tip-card__text {
+      font-size: 14px;
+      color: var(--grey-700);
+      line-height: 1.5;
+    }
+    
+    /* Download Section */
+    .download-section {
+      background-color: var(--unlmtd-black);
+      padding: 48px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .download-section__title {
+      font-size: 28px;
+      color: var(--unlmtd-white);
+      margin-bottom: 12px;
+    }
+    
+    .download-section__text {
+      font-size: 16px;
+      color: var(--grey-500);
+      max-width: 400px;
+      margin: 0 auto 24px;
+    }
+    
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background-color: var(--unlmtd-blue);
+      color: var(--unlmtd-white);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .download-btn:hover {
+      background-color: var(--blue-medium);
+    }
+    
+    .download-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* Footer */
+    .checklist-footer {
+      text-align: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--grey-200);
+      margin-top: 48px;
+    }
+    
+    .checklist-footer__text {
+      font-size: 13px;
+      color: var(--grey-500);
+    }
+    
+    /* Responsive */
+    @media (max-width: 640px) {
+      .unlmtd-checklist {
+        padding: 24px 16px;
+      }
+      
+      .quick-reference {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+      }
+      
+      .section-header {
+        padding: 16px;
+      }
+      
+      .section-progress-bar {
+        display: none;
+      }
+      
+      .section-content {
+        padding: 0 16px 16px;
+      }
+      
+      .checklist-item {
+        padding: 12px;
+      }
+      
+      .formats-table {
+        font-size: 13px;
+      }
+      
+      .formats-table th,
+      .formats-table td {
+        padding: 10px 12px;
+      }
+      
+      .download-section {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="unlmtd-checklist">
+  
+  <!-- Header -->
+  <header class="checklist-header">
+    <span class="checklist-header__badge">Designer Resources</span>
+    <h1 class="checklist-header__title">Logo Design Checklist</h1>
+    <p class="checklist-header__subtitle">A comprehensive checklist for professional logo design projects</p>
+  </header>
+  
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-header">
+      <span class="progress-label">Overall Progress</span>
+      <span class="progress-percentage" id="progressPercent">0%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-bar__fill" id="progressFill"></div>
+    </div>
+    <div class="progress-stats">
+      <span id="progressCount">0 of 58 tasks complete</span>
+      <span id="requiredCount">0/42 required</span>
+    </div>
+  </div>
+  
+  <!-- Quick Reference -->
+  <div class="quick-reference">
+    <div class="quick-reference__item">
+      <div class="quick-reference__label">Resolution</div>
+      <div class="quick-reference__value">300 DPI</div>
+    </div>
+    <div class="quick-reference__item">
+      <div class="quick-reference__label">Colour Mode</div>
+      <div class="quick-reference__value">CMYK</div>
+    </div>
+    <div class="quick-reference__item">
+      <div class="quick-reference__label">Master Format</div>
+      <div class="quick-reference__value">AI / EPS</div>
+    </div>
+    <div class="quick-reference__item">
+      <div class="quick-reference__label">Web Format</div>
+      <div class="quick-reference__value">SVG / PNG</div>
+    </div>
+  </div>
+  
+  <!-- Checklist Sections -->
+  <div id="checklistSections"></div>
+  
+  <!-- File Formats -->
+  <section class="formats-section">
+    <h2 class="formats-section__title">File Format Reference</h2>
+    <table class="formats-table">
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Full Name</th>
+          <th>Primary Use</th>
+          <th>Type</th>
+          <th>Essential</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="format-badge">.ai</span></td>
+          <td>Adobe Illustrator</td>
+          <td>Master editable file</td>
+          <td><span class="type-badge type-badge--vector">Vector</span></td>
+          <td><svg class="essential-check" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></td>
+        </tr>
+        <tr>
+          <td><span class="format-badge">.eps</span></td>
+          <td>Encapsulated PostScript</td>
+          <td>Universal vector format</td>
+          <td><span class="type-badge type-badge--vector">Vector</span></td>
+          <td><svg class="essential-check" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></td>
+        </tr>
+        <tr>
+          <td><span class="format-badge">.pdf</span></td>
+          <td>Portable Document Format</td>
+          <td>Print & sharing</td>
+          <td><span class="type-badge type-badge--vector">Vector</span></td>
+          <td><svg class="essential-check" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></td>
+        </tr>
+        <tr>
+          <td><span class="format-badge">.svg</span></td>
+          <td>Scalable Vector Graphics</td>
+          <td>Web & digital</td>
+          <td><span class="type-badge type-badge--vector">Vector</span></td>
+          <td><svg class="essential-check" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></td>
+        </tr>
+        <tr>
+          <td><span class="format-badge">.png</span></td>
+          <td>Portable Network Graphics</td>
+          <td>Digital with transparency</td>
+          <td><span class="type-badge type-badge--raster">Raster</span></td>
+          <td><svg class="essential-check" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></td>
+        </tr>
+        <tr>
+          <td><span class="format-badge">.jpg</span></td>
+          <td>JPEG</td>
+          <td>Web & email</td>
+          <td><span class="type-badge type-badge--raster">Raster</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><span class="format-badge">.ico</span></td>
+          <td>Icon File</td>
+          <td>Favicons</td>
+          <td><span class="type-badge type-badge--raster">Raster</span></td>
+          <td><svg class="essential-check" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <!-- Tips -->
+  <section class="tips-section">
+    <h2 class="tips-section__title">Quick Tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card tip-card--blue">
+        <h3 class="tip-card__title">Scalability Test</h3>
+        <p class="tip-card__text">A great logo should be recognisable at 16px (favicon) and readable on a billboard. Test your design at both extremes before finalising.</p>
+      </div>
+      <div class="tip-card tip-card--yellow">
+        <h3 class="tip-card__title">Squint Test</h3>
+        <p class="tip-card__text">Squint at your logo from across the room. If you can still identify the core shape and distinguish it from competitors, you're on the right track.</p>
+      </div>
+      <div class="tip-card tip-card--red">
+        <h3 class="tip-card__title">Versatility Check</h3>
+        <p class="tip-card__text">Mock up your logo on business cards, websites, merchandise, and signage. If it doesn't work in one of these contexts, reconsider your approach.</p>
+      </div>
+      <div class="tip-card tip-card--blue">
+        <h3 class="tip-card__title">Licensing Reminder</h3>
+        <p class="tip-card__text">Always verify font licensing for commercial use. When in doubt, outline fonts in final deliverables to avoid licensing complications for your client.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Download -->
+  <section class="download-section">
+    <h2 class="download-section__title">Download the Checklist</h2>
+    <p class="download-section__text">Get the printable PDF version with all checklist items and quick reference guides.</p>
+    <a href="#" class="download-btn" download>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+      </svg>
+      Download PDF Checklist
+    </a>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="checklist-footer">
+    <p class="checklist-footer__text">© 2025 Unlmtd Agency — Logo Design Checklist for Australian Graphic Designers</p>
+  </footer>
+  
+</div>
+
+<script>
+// Checklist Data
+const checklistData = [
+  {
+    id: 'discovery',
+    title: 'Discovery & Research',
+    items: [
+      { id: 'd1', text: 'Client brief completed and reviewed', required: true },
+      { id: 'd2', text: 'Business goals and values documented', required: true },
+      { id: 'd3', text: 'Target audience identified and profiled', required: true },
+      { id: 'd4', text: 'Competitor logos analysed', required: true },
+      { id: 'd5', text: 'Industry trends researched', required: false },
+      { id: 'd6', text: 'Brand personality keywords defined', required: true },
+      { id: 'd7', text: 'Existing brand assets reviewed (if rebrand)', required: false },
+      { id: 'd8', text: 'Budget and timeline confirmed', required: true }
+    ]
+  },
+  {
+    id: 'concept',
+    title: 'Concept Development',
+    items: [
+      { id: 'c1', text: 'Mind mapping / brainstorming completed', required: true },
+      { id: 'c2', text: 'Minimum 20-30 thumbnail sketches created', required: true },
+      { id: 'c3', text: 'Top 3-5 concepts selected for refinement', required: true },
+      { id: 'c4', text: 'Typography options explored', required: true },
+      { id: 'c5', text: 'Colour palette directions considered', required: true },
+      { id: 'c6', text: 'Concepts tested in black and white', required: true },
+      { id: 'c7', text: 'Concepts reviewed at various sizes', required: true },
+      { id: 'c8', text: 'Internal design review completed', required: false }
+    ]
+  },
+  {
+    id: 'design',
+    title: 'Design Execution',
+    items: [
+      { id: 'e1', text: 'Logo constructed in vector format (AI/EPS)', required: true },
+      { id: 'e2', text: 'Clean, optimised paths and anchor points', required: true },
+      { id: 'e3', text: 'Typography finalised (custom or licensed)', required: true },
+      { id: 'e4', text: 'Primary colour palette defined (CMYK + Pantone)', required: true },
+      { id: 'e5', text: 'Secondary colour palette defined', required: false },
+      { id: 'e6', text: 'Black and white version created', required: true },
+      { id: 'e7', text: 'Reversed (white on dark) version created', required: true },
+      { id: 'e8', text: 'Greyscale version created', required: true },
+      { id: 'e9', text: 'Horizontal and vertical lockups designed', required: true },
+      { id: 'e10', text: 'Icon/favicon version created', required: true }
+    ]
+  },
+  {
+    id: 'testing',
+    title: 'Testing & Refinement',
+    items: [
+      { id: 't1', text: 'Logo tested at minimum size (20mm width)', required: true },
+      { id: 't2', text: 'Logo tested at large scale (billboard/signage)', required: true },
+      { id: 't3', text: 'Readability verified across all sizes', required: true },
+      { id: 't4', text: 'Tested on various backgrounds (light/dark/photo)', required: true },
+      { id: 't5', text: 'Digital screen display tested (RGB conversion)', required: true },
+      { id: 't6', text: 'Print proof reviewed (if possible)', required: false },
+      { id: 't7', text: 'Mockups created for client presentation', required: true },
+      { id: 't8', text: 'Accessibility contrast ratios checked', required: false }
+    ]
+  },
+  {
+    id: 'approval',
+    title: 'Client Approval',
+    items: [
+      { id: 'a1', text: 'Concept presentation delivered to client', required: true },
+      { id: 'a2', text: 'Client feedback documented', required: true },
+      { id: 'a3', text: 'Revisions completed (Round 1)', required: true },
+      { id: 'a4', text: 'Revisions completed (Round 2 if needed)', required: false },
+      { id: 'a5', text: 'Final design approved in writing', required: true },
+      { id: 'a6', text: 'Trademark search recommended to client', required: true }
+    ]
+  },
+  {
+    id: 'delivery',
+    title: 'File Preparation & Delivery',
+    items: [
+      { id: 'f1', text: 'AI master file with organised layers', required: true },
+      { id: 'f2', text: 'EPS file (outlined fonts)', required: true },
+      { id: 'f3', text: 'PDF file (vector, press-ready)', required: true },
+      { id: 'f4', text: 'SVG file for web use', required: true },
+      { id: 'f5', text: 'PNG files (transparent, various sizes)', required: true },
+      { id: 'f6', text: 'JPG files (RGB, web optimised)', required: true },
+      { id: 'f7', text: 'Favicon files (ICO, 16x16, 32x32, 180x180)', required: true },
+      { id: 'f8', text: 'Social media profile sizes included', required: false },
+      { id: 'f9', text: 'Files organised in clear folder structure', required: true },
+      { id: 'f10', text: 'README file with usage notes', required: false }
+    ]
+  },
+  {
+    id: 'guidelines',
+    title: 'Brand Guidelines',
+    items: [
+      { id: 'g1', text: 'Logo usage rules documented', required: true },
+      { id: 'g2', text: 'Minimum size specifications defined', required: true },
+      { id: 'g3', text: 'Clear space requirements shown', required: true },
+      { id: 'g4', text: 'Colour codes provided (CMYK, RGB, HEX, Pantone)', required: true },
+      { id: 'g5', text: 'Incorrect usage examples included', required: true },
+      { id: 'g6', text: 'Typography guidelines documented', required: false },
+      { id: 'g7', text: 'Co-branding guidelines included', required: false },
+      { id: 'g8', text: 'Brand guidelines PDF compiled', required: true }
+    ]
+  }
+];
+
+// State
+let checkedItems = {};
+let openSections = ['discovery'];
+
+// Load saved state from localStorage
+function loadState() {
+  const saved = localStorage.getItem('unlmtd-logo-checklist');
+  if (saved) {
+    checkedItems = JSON.parse(saved);
+  }
+}
+
+// Save state to localStorage
+function saveState() {
+  localStorage.setItem('unlmtd-logo-checklist', JSON.stringify(checkedItems));
+}
+
+// Calculate progress
+function calculateProgress() {
+  const allItems = checklistData.flatMap(s => s.items);
+  const checkedCount = allItems.filter(item => checkedItems[item.id]).length;
+  const total = allItems.length;
+  const percentage = Math.round((checkedCount / total) * 100);
+  
+  const requiredItems = allItems.filter(i => i.required);
+  const requiredChecked = requiredItems.filter(item => checkedItems[item.id]).length;
+  
+  return { checkedCount, total, percentage, requiredChecked, requiredTotal: requiredItems.length };
+}
+
+// Update progress display
+function updateProgress() {
+  const progress = calculateProgress();
+  
+  document.getElementById('progressPercent').textContent = `${progress.percentage}%`;
+  document.getElementById('progressFill').style.width = `${progress.percentage}%`;
+  document.getElementById('progressCount').textContent = `${progress.checkedCount} of ${progress.total} tasks complete`;
+  document.getElementById('requiredCount').textContent = `${progress.requiredChecked}/${progress.requiredTotal} required`;
+}
+
+// Check if section is complete
+function isSectionComplete(section) {
+  return section.items.every(item => checkedItems[item.id]);
+}
+
+// Get section progress
+function getSectionProgress(section) {
+  const checked = section.items.filter(item => checkedItems[item.id]).length;
+  return { checked, total: section.items.length };
+}
+
+// Render sections
+function renderSections() {
+  const container = document.getElementById('checklistSections');
+  container.innerHTML = '';
+  
+  checklistData.forEach((section, index) => {
+    const isComplete = isSectionComplete(section);
+    const isOpen = openSections.includes(section.id);
+    const progress = getSectionProgress(section);
+    const progressPercent = (progress.checked / progress.total) * 100;
+    
+    const sectionEl = document.createElement('div');
+    sectionEl.className = `checklist-section${isComplete ? ' is-complete' : ''}`;
+    
+    sectionEl.innerHTML = `
+      <div class="section-header" data-section="${section.id}">
+        <div class="section-header__left">
+          <div class="section-number">${isComplete ? '<svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>' : (index + 1)}</div>
+          <div>
+            <h3 class="section-title">${section.title}</h3>
+            <p class="section-progress">${progress.checked} of ${progress.total} complete</p>
+          </div>
+        </div>
+        <div class="section-header__right">
+          <div class="section-progress-bar">
+            <div class="section-progress-bar__fill" style="width: ${progressPercent}%"></div>
+          </div>
+          <div class="section-toggle${isOpen ? ' is-open' : ''}">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="section-content${isOpen ? ' is-open' : ''}">
+        ${section.items.map(item => `
+          <div class="checklist-item${checkedItems[item.id] ? ' is-checked' : ''}" data-item="${item.id}">
+            <div class="checklist-item__checkbox">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <span class="checklist-item__text">${item.text}</span>
+            ${item.required ? '<span class="checklist-item__badge">Required</span>' : ''}
+          </div>
+        `).join('')}
+      </div>
+    `;
+    
+    container.appendChild(sectionEl);
+  });
+  
+  // Add event listeners
+  document.querySelectorAll('.section-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const sectionId = header.dataset.section;
+      if (openSections.includes(sectionId)) {
+        openSections = openSections.filter(id => id !== sectionId);
+      } else {
+        openSections.push(sectionId);
+      }
+      renderSections();
+    });
+  });
+  
+  document.querySelectorAll('.checklist-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const itemId = item.dataset.item;
+      checkedItems[itemId] = !checkedItems[itemId];
+      saveState();
+      updateProgress();
+      renderSections();
+    });
+  });
+}
+
+// Initialize
+function init() {
+  loadState();
+  renderSections();
+  updateProgress();
+}
+
+// Run on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Design Specifications | Unlmtd Agency</title>
+  
+  <!-- Google Fonts - Instrument Sans & Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============================================
+       UNLMTD AGENCY BRAND VARIABLES
+       ============================================ */
+    :root {
+      --unlmtd-blue: #21409a;
+      --unlmtd-yellow: #FFDE17;
+      --unlmtd-red: #BE1E2D;
+      --unlmtd-black: #1D1D1D;
+      --unlmtd-white: #ffffff;
+      
+      --blue-light: #e8ecf5;
+      --blue-medium: #3a5bb8;
+      --blue-dark: #192d6b;
+      --yellow-light: #fff9db;
+      --yellow-medium: #ffe566;
+      --red-light: #fceaec;
+      --grey-50: #fafafa;
+      --grey-100: #f5f5f5;
+      --grey-200: #e5e5e5;
+      --grey-300: #d4d4d4;
+      --grey-400: #a3a3a3;
+      --grey-500: #737373;
+      --grey-600: #525252;
+      --grey-700: #404040;
+      --grey-800: #262626;
+    }
+    
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--unlmtd-black);
+      background-color: var(--grey-50);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--unlmtd-black);
+    }
+    
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .unlmtd-print-specs {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ============================================
+       HEADER
+       ============================================ */
+    .specs-header {
+      background: linear-gradient(135deg, var(--unlmtd-blue) 0%, var(--blue-dark) 100%);
+      padding: 48px 24px;
+      margin: 0 -24px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .specs-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--unlmtd-yellow);
+    }
+    
+    .specs-header__inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .specs-header__badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--unlmtd-white);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    
+    .specs-header__title {
+      font-size: clamp(32px, 5vw, 48px);
+      color: var(--unlmtd-white);
+      margin-bottom: 12px;
+    }
+    
+    .specs-header__subtitle {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 600px;
+    }
+    
+    /* ============================================
+       QUICK REFERENCE BANNER
+       ============================================ */
+    .quick-ref-banner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--unlmtd-blue);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    
+    .quick-ref-banner__item {
+      background: var(--blue-light);
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .quick-ref-banner__label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--unlmtd-blue);
+      margin-bottom: 6px;
+    }
+    
+    .quick-ref-banner__value {
+      font-family: 'Instrument Serif', serif;
+      font-size: 24px;
+      color: var(--unlmtd-black);
+    }
+    
+    @media (max-width: 640px) {
+      .quick-ref-banner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* ============================================
+       SECTION TITLES
+       ============================================ */
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--grey-200);
+    }
+    
+    .section-title span {
+      color: var(--unlmtd-blue);
+    }
+    
+    /* ============================================
+       PRODUCT TABS
+       ============================================ */
+    .product-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--grey-200);
+    }
+    
+    .product-tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--grey-100);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--grey-600);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .product-tab:hover {
+      background: var(--grey-200);
+      color: var(--unlmtd-black);
+    }
+    
+    .product-tab.is-active {
+      background: var(--unlmtd-blue);
+      border-color: var(--unlmtd-blue);
+      color: var(--unlmtd-white);
+    }
+    
+    .product-tab svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* ============================================
+       SPEC CARD
+       ============================================ */
+    .spec-card {
+      background: var(--unlmtd-white);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    
+    .spec-card__header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: var(--grey-50);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    
+    .spec-card__icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue-light);
+      border-radius: 8px;
+      color: var(--unlmtd-blue);
+    }
+    
+    .spec-card__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .spec-card__title {
+      font-size: 24px;
+    }
+    
+    .spec-card__body {
+      padding: 24px;
+    }
+    
+    /* ============================================
+       SIZES TABLE
+       ============================================ */
+    .sizes-section {
+      margin-bottom: 32px;
+    }
+    
+    .sizes-section__label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--grey-500);
+      margin-bottom: 12px;
+    }
+    
+    .sizes-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .sizes-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: var(--grey-100);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--grey-600);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    
+    .sizes-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--grey-100);
+      font-size: 14px;
+    }
+    
+    .sizes-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .sizes-table__format {
+      font-weight: 600;
+      color: var(--unlmtd-black);
+    }
+    
+    .sizes-table__dimensions {
+      font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+      font-size: 13px;
+      color: var(--grey-600);
+    }
+    
+    /* ============================================
+       SPECS GRID
+       ============================================ */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    
+    @media (max-width: 640px) {
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .specs-list {
+      list-style: none;
+    }
+    
+    .specs-list__item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--grey-100);
+    }
+    
+    .specs-list__item:last-child {
+      border-bottom: none;
+    }
+    
+    .specs-list__label {
+      color: var(--grey-500);
+      font-size: 14px;
+    }
+    
+    .specs-list__value {
+      font-weight: 600;
+      color: var(--unlmtd-black);
+      font-size: 14px;
+    }
+    
+    /* ============================================
+       FILE FORMATS
+       ============================================ */
+    .formats-section__label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--grey-500);
+      margin-bottom: 12px;
+    }
+    
+    .formats-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .format-badge {
+      padding: 6px 12px;
+      background: var(--grey-100);
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--grey-700);
+    }
+    
+    /* ============================================
+       TIPS BOX
+       ============================================ */
+    .tips-box {
+      background: var(--yellow-light);
+      border: 1px solid var(--unlmtd-yellow);
+      border-radius: 4px;
+      padding: 20px;
+    }
+    
+    .tips-box__header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    
+    .tips-box__icon {
+      color: var(--unlmtd-black);
+    }
+    
+    .tips-box__title {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--unlmtd-black);
+    }
+    
+    .tips-box__list {
+      list-style: none;
+    }
+    
+    .tips-box__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--grey-700);
+      margin-bottom: 8px;
+    }
+    
+    .tips-box__item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .tips-box__check {
+      color: var(--unlmtd-blue);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    /* ============================================
+       COLOUR MODES SECTION
+       ============================================ */
+    .colour-modes {
+      margin-bottom: 48px;
+    }
+    
+    .colour-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    
+    @media (max-width: 768px) {
+      .colour-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .colour-card {
+      background: var(--unlmtd-white);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .colour-card:hover {
+      border-color: var(--unlmtd-blue);
+      box-shadow: 0 4px 12px rgba(33, 64, 154, 0.1);
+    }
+    
+    .colour-card.is-expanded {
+      border-color: var(--unlmtd-blue);
+      background: var(--blue-light);
+    }
+    
+    .colour-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    
+    .colour-card__title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      color: var(--unlmtd-black);
+    }
+    
+    .colour-card__toggle {
+      color: var(--grey-400);
+      transition: transform 0.2s ease;
+    }
+    
+    .colour-card.is-expanded .colour-card__toggle {
+      transform: rotate(180deg);
+    }
+    
+    .colour-card__desc {
+      font-size: 14px;
+      color: var(--grey-600);
+      line-height: 1.5;
+    }
+    
+    .colour-card__details {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(33, 64, 154, 0.2);
+    }
+    
+    .colour-card.is-expanded .colour-card__details {
+      display: block;
+    }
+    
+    .colour-card__tip {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--grey-700);
+      margin-bottom: 8px;
+    }
+    
+    .colour-card__tip:last-child {
+      margin-bottom: 0;
+    }
+    
+    .colour-card__bullet {
+      color: var(--unlmtd-blue);
+      font-weight: bold;
+    }
+    
+    /* ============================================
+       PAPER STOCK TABLE
+       ============================================ */
+    .paper-section {
+      margin-bottom: 48px;
+    }
+    
+    .paper-table {
+      width: 100%;
+      background: var(--unlmtd-white);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      border-collapse: collapse;
+      overflow: hidden;
+    }
+    
+    .paper-table th {
+      text-align: left;
+      padding: 14px 16px;
+      background: var(--grey-100);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--grey-600);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    
+    .paper-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--grey-100);
+      font-size: 14px;
+    }
+    
+    .paper-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .paper-table__stock {
+      font-weight: 600;
+      color: var(--unlmtd-black);
+    }
+    
+    .paper-table__finish {
+      font-size: 13px;
+      color: var(--grey-500);
+    }
+    
+    /* ============================================
+       PREFLIGHT CHECKLIST
+       ============================================ */
+    .preflight-section {
+      margin-bottom: 48px;
+    }
+    
+    .preflight-card {
+      background: var(--unlmtd-white);
+      border: 1px solid var(--grey-200);
+      border-radius: 4px;
+      padding: 24px;
+    }
+    
+    .preflight-card__intro {
+      font-size: 15px;
+      color: var(--grey-600);
+      margin-bottom: 20px;
+    }
+    
+    .preflight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    
+    @media (max-width: 640px) {
+      .preflight-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .preflight-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--grey-50);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    
+    .preflight-item:hover {
+      background: var(--grey-100);
+    }
+    
+    .preflight-item.is-checked {
+      background: var(--blue-light);
+    }
+    
+    .preflight-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--grey-300);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    
+    .preflight-item.is-checked .preflight-checkbox {
+      background: var(--unlmtd-blue);
+      border-color: var(--unlmtd-blue);
+    }
+    
+    .preflight-checkbox svg {
+      width: 12px;
+      height: 12px;
+      color: var(--unlmtd-white);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.2s ease;
+    }
+    
+    .preflight-item.is-checked .preflight-checkbox svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .preflight-label {
+      font-size: 14px;
+      color: var(--grey-700);
+    }
+    
+    .preflight-item.is-checked .preflight-label {
+      color: var(--grey-500);
+      text-decoration: line-through;
+    }
+    
+    /* ============================================
+       CTA SECTION
+       ============================================ */
+    .cta-section {
+      background: var(--unlmtd-black);
+      border-radius: 4px;
+      padding: 48px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .cta-section__title {
+      font-size: 28px;
+      color: var(--unlmtd-white);
+      margin-bottom: 12px;
+    }
+    
+    .cta-section__text {
+      font-size: 16px;
+      color: var(--grey-400);
+      max-width: 500px;
+      margin: 0 auto 24px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    
+    .cta-btn--primary {
+      background: var(--unlmtd-blue);
+      color: var(--unlmtd-white);
+    }
+    
+    .cta-btn--primary:hover {
+      background: var(--blue-medium);
+    }
+    
+    .cta-btn--secondary {
+      background: var(--grey-800);
+      color: var(--unlmtd-white);
+    }
+    
+    .cta-btn--secondary:hover {
+      background: var(--grey-700);
+    }
+    
+    .cta-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .specs-footer {
+      border-top: 1px solid var(--grey-200);
+      padding: 24px 0;
+      margin-top: 24px;
+    }
+    
+    .specs-footer__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .specs-footer__text {
+      font-size: 13px;
+      color: var(--grey-500);
+    }
+    
+    .specs-footer__date {
+      font-size: 13px;
+      color: var(--grey-400);
+    }
+  </style>
+</head>
+<body>
+
+<div class="unlmtd-print-specs">
+  
+  <!-- Header -->
+  <header class="specs-header">
+    <div class="specs-header__inner">
+      <span class="specs-header__badge">Design Resources</span>
+      <h1 class="specs-header__title">Print Design Specifications</h1>
+      <p class="specs-header__subtitle">Australian standard sizes, bleed requirements, and file setup guidelines for professional print production.</p>
+    </div>
+  </header>
+  
+  <!-- Quick Reference Banner -->
+  <div class="quick-ref-banner">
+    <div class="quick-ref-banner__item">
+      <div class="quick-ref-banner__label">Resolution</div>
+      <div class="quick-ref-banner__value">300 DPI</div>
+    </div>
+    <div class="quick-ref-banner__item">
+      <div class="quick-ref-banner__label">Colour Mode</div>
+      <div class="quick-ref-banner__value">CMYK</div>
+    </div>
+    <div class="quick-ref-banner__item">
+      <div class="quick-ref-banner__label">Standard Bleed</div>
+      <div class="quick-ref-banner__value">3mm</div>
+    </div>
+    <div class="quick-ref-banner__item">
+      <div class="quick-ref-banner__label">File Format</div>
+      <div class="quick-ref-banner__value">PDF/X-1a</div>
+    </div>
+  </div>
+  
+  <!-- Product Specifications -->
+  <section class="products-section">
+    <h2 class="section-title">Product <span>Specifications</span></h2>
+    
+    <!-- Product Tabs -->
+    <div class="product-tabs" id="productTabs">
+      <button class="product-tab is-active" data-product="businessCards">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0"/></svg>
+        Business Cards
+      </button>
+      <button class="product-tab" data-product="flyers">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Flyers
+      </button>
+      <button class="product-tab" data-product="brochures">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        Brochures
+      </button>
+      <button class="product-tab" data-product="posters">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Posters
+      </button>
+      <button class="product-tab" data-product="stationery">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Stationery
+      </button>
+      <button class="product-tab" data-product="packaging">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        Packaging
+      </button>
+      <button class="product-tab" data-product="banners">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/></svg>
+        Banners
+      </button>
+      <button class="product-tab" data-product="booklets">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        Booklets
+      </button>
+    </div>
+    
+    <!-- Spec Card Container -->
+    <div id="specCardContainer"></div>
+  </section>
+  
+  <!-- Colour Modes -->
+  <section class="colour-modes">
+    <h2 class="section-title">Colour Modes <span>for Print</span></h2>
+    
+    <div class="colour-grid">
+      <div class="colour-card" data-colour="cmyk">
+        <div class="colour-card__header">
+          <h3 class="colour-card__title">CMYK</h3>
+          <svg class="colour-card__toggle" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="colour-card__desc">Print standard using Cyan, Magenta, Yellow, and Black inks.</p>
+        <div class="colour-card__details">
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Convert RGB images before final export</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Colours may appear duller than on screen</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Total ink coverage should not exceed 300%</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Rich black: C60 M40 Y40 K100</div>
+        </div>
+      </div>
+      
+      <div class="colour-card" data-colour="pantone">
+        <div class="colour-card__header">
+          <h3 class="colour-card__title">Pantone</h3>
+          <svg class="colour-card__toggle" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="colour-card__desc">Pre-mixed inks for exact colour matching and brand consistency.</p>
+        <div class="colour-card__details">
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Specify Coated (C) or Uncoated (U)</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Request physical swatch for approval</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Additional cost per spot colour</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Ideal for logos and brand colours</div>
+        </div>
+      </div>
+      
+      <div class="colour-card" data-colour="rgb">
+        <div class="colour-card__header">
+          <h3 class="colour-card__title">RGB</h3>
+          <svg class="colour-card__toggle" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <p class="colour-card__desc">Screen colour mode — do not use for print production.</p>
+        <div class="colour-card__details">
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Only for digital/web deliverables</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Always convert to CMYK for print</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Some RGB colours can't be reproduced</div>
+          <div class="colour-card__tip"><span class="colour-card__bullet">•</span> Soft proof before sending to print</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Paper Stock -->
+  <section class="paper-section">
+    <h2 class="section-title">Paper Stock <span>Guide</span></h2>
+    
+    <table class="paper-table">
+      <thead>
+        <tr>
+          <th>Stock Type</th>
+          <th>Weight Range</th>
+          <th>Best For</th>
+          <th>Finish</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="paper-table__stock">Uncoated</td>
+          <td>80–120 gsm</td>
+          <td>Letterheads, forms, notepads</td>
+          <td class="paper-table__finish">Natural, writable surface</td>
+        </tr>
+        <tr>
+          <td class="paper-table__stock">Silk / Satin</td>
+          <td>130–350 gsm</td>
+          <td>Brochures, flyers, catalogues</td>
+          <td class="paper-table__finish">Smooth, low sheen</td>
+        </tr>
+        <tr>
+          <td class="paper-table__stock">Gloss</td>
+          <td>130–350 gsm</td>
+          <td>Flyers, postcards, photos</td>
+          <td class="paper-table__finish">Shiny, vibrant colours</td>
+        </tr>
+        <tr>
+          <td class="paper-table__stock">Matt</td>
+          <td>130–350 gsm</td>
+          <td>Business cards, booklets</td>
+          <td class="paper-table__finish">Non-reflective, elegant</td>
+        </tr>
+        <tr>
+          <td class="paper-table__stock">Recycled</td>
+          <td>80–300 gsm</td>
+          <td>Eco-friendly projects</td>
+          <td class="paper-table__finish">Natural texture, speckled</td>
+        </tr>
+        <tr>
+          <td class="paper-table__stock">Card Stock</td>
+          <td>300–400 gsm</td>
+          <td>Business cards, covers</td>
+          <td class="paper-table__finish">Thick, sturdy</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
+  <!-- Pre-Flight Checklist -->
+  <section class="preflight-section">
+    <h2 class="section-title">Pre-Flight <span>Checklist</span></h2>
+    
+    <div class="preflight-card">
+      <p class="preflight-card__intro">Before submitting your files, ensure you've completed these essential steps:</p>
+      
+      <div class="preflight-grid" id="preflightGrid">
+        <!-- Items added by JS -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="cta-section__title">Need Help With Your Print Files?</h2>
+    <p class="cta-section__text">Our team can review your artwork, suggest improvements, and ensure your files are print-ready.</p>
+    <div class="cta-buttons">
+      <a href="#" class="cta-btn cta-btn--primary">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Request File Check
+      </a>
+      <a href="#" class="cta-btn cta-btn--secondary">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        Download PDF Guide
+      </a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="specs-footer">
+    <div class="specs-footer__inner">
+      <p class="specs-footer__text">Specifications follow Australian printing industry standards. Always confirm requirements with your print provider.</p>
+      <p class="specs-footer__date">Last updated: November 2025</p>
+    </div>
+  </footer>
+  
+</div>
+
+<script>
+// ============================================
+// PRODUCT SPECIFICATIONS DATA
+// ============================================
+const productSpecs = {
+  businessCards: {
+    title: "Business Cards",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0"/></svg>',
+    sizes: [
+      { name: "Standard", dimensions: "90 × 55 mm", pixels: "1063 × 650 px" },
+      { name: "Square", dimensions: "55 × 55 mm", pixels: "650 × 650 px" },
+      { name: "Mini", dimensions: "70 × 28 mm", pixels: "827 × 331 px" }
+    ],
+    bleed: "3mm all sides",
+    safeZone: "5mm from trim edge",
+    resolution: "300 DPI minimum",
+    colourMode: "CMYK",
+    fileFormats: ["PDF (Press Quality)", "AI", "EPS", "PSD (flattened)"],
+    tips: [
+      "Keep text minimum 6pt for legibility",
+      "Avoid placing critical elements near edges",
+      "Use vector logos for sharpest results",
+      "Consider rounded corners (add to artwork if required)"
+    ]
+  },
+  flyers: {
+    title: "Flyers & Leaflets",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
+    sizes: [
+      { name: "A4", dimensions: "210 × 297 mm", pixels: "2480 × 3508 px" },
+      { name: "A5", dimensions: "148 × 210 mm", pixels: "1748 × 2480 px" },
+      { name: "A6", dimensions: "105 × 148 mm", pixels: "1240 × 1748 px" },
+      { name: "DL", dimensions: "99 × 210 mm", pixels: "1169 × 2480 px" }
+    ],
+    bleed: "3mm all sides",
+    safeZone: "5mm from trim edge",
+    resolution: "300 DPI",
+    colourMode: "CMYK",
+    fileFormats: ["PDF/X-1a", "PDF (Press Quality)", "AI", "INDD (packaged)"],
+    tips: [
+      "Include crop marks and bleed in final PDF",
+      "Outline all fonts or embed them",
+      "Check image resolution at 100% zoom",
+      "For folded items, indicate fold lines clearly"
+    ]
+  },
+  brochures: {
+    title: "Brochures",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>',
+    sizes: [
+      { name: "A4 Tri-fold", dimensions: "297 × 210 mm (flat)", pixels: "3508 × 2480 px" },
+      { name: "A4 Bi-fold", dimensions: "297 × 210 mm (flat)", pixels: "3508 × 2480 px" },
+      { name: "A5 Bi-fold", dimensions: "297 × 105 mm (flat)", pixels: "3508 × 1240 px" },
+      { name: "DL Tri-fold", dimensions: "297 × 210 mm (flat)", pixels: "3508 × 2480 px" }
+    ],
+    bleed: "3mm all sides",
+    safeZone: "8mm from trim, 5mm from fold",
+    resolution: "300 DPI",
+    colourMode: "CMYK",
+    fileFormats: ["PDF/X-1a", "AI", "INDD (packaged)"],
+    tips: [
+      "Account for fold-in panel being 2-3mm narrower",
+      "Supply pages in correct reading order",
+      "Mark inside vs outside panels clearly",
+      "Consider paper grain direction for clean folds"
+    ]
+  },
+  posters: {
+    title: "Posters & Signage",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>',
+    sizes: [
+      { name: "A3", dimensions: "297 × 420 mm", pixels: "3508 × 4961 px" },
+      { name: "A2", dimensions: "420 × 594 mm", pixels: "4961 × 7016 px" },
+      { name: "A1", dimensions: "594 × 841 mm", pixels: "7016 × 9933 px" },
+      { name: "A0", dimensions: "841 × 1189 mm", pixels: "9933 × 14043 px" }
+    ],
+    bleed: "5mm all sides",
+    safeZone: "10mm from trim edge",
+    resolution: "300 DPI (up to A2), 150 DPI (A1+)",
+    colourMode: "CMYK",
+    fileFormats: ["PDF/X-1a", "AI", "EPS", "TIFF"],
+    tips: [
+      "Large format can use lower DPI (150) for viewing distance",
+      "Check total ink coverage doesn't exceed 300%",
+      "Use rich black (C60 M40 Y40 K100) for large black areas",
+      "Scale artwork at 50% if file size is too large"
+    ]
+  },
+  stationery: {
+    title: "Letterheads & Stationery",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>',
+    sizes: [
+      { name: "A4 Letterhead", dimensions: "210 × 297 mm", pixels: "2480 × 3508 px" },
+      { name: "Compliment Slip", dimensions: "210 × 99 mm", pixels: "2480 × 1169 px" },
+      { name: "DL Envelope", dimensions: "220 × 110 mm", pixels: "2598 × 1299 px" },
+      { name: "C5 Envelope", dimensions: "229 × 162 mm", pixels: "2705 × 1913 px" }
+    ],
+    bleed: "0mm (usually none for stationery)",
+    safeZone: "15mm from edges for printer margins",
+    resolution: "300 DPI",
+    colourMode: "CMYK (or Pantone for brand consistency)",
+    fileFormats: ["PDF", "AI", "INDD"],
+    tips: [
+      "Leave space for handwriting/typing content",
+      "Consider envelope window positioning",
+      "Match paper stock across all items",
+      "Spot UV or foil areas need separate layer"
+    ]
+  },
+  packaging: {
+    title: "Labels & Packaging",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>',
+    sizes: [
+      { name: "Wine Label", dimensions: "90 × 120 mm", pixels: "1063 × 1417 px" },
+      { name: "Product Label (small)", dimensions: "50 × 50 mm", pixels: "591 × 591 px" },
+      { name: "Product Label (medium)", dimensions: "80 × 60 mm", pixels: "945 × 709 px" },
+      { name: "Custom", dimensions: "Varies", pixels: "Request dieline" }
+    ],
+    bleed: "3mm all sides",
+    safeZone: "3mm from trim edge",
+    resolution: "300 DPI minimum",
+    colourMode: "CMYK + Pantone (for brand colours)",
+    fileFormats: ["PDF/X-4", "AI (with dieline)", "EPS"],
+    tips: [
+      "Always request a dieline from your printer",
+      "Account for substrate texture and colour",
+      "Include barcode at correct size (min 80% scale)",
+      "Separate spot colours and finishes on layers"
+    ]
+  },
+  banners: {
+    title: "Pull-up Banners",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/></svg>',
+    sizes: [
+      { name: "Standard", dimensions: "850 × 2000 mm", pixels: "2551 × 6000 px" },
+      { name: "Wide", dimensions: "1000 × 2000 mm", pixels: "3000 × 6000 px" },
+      { name: "Double-sided", dimensions: "850 × 2000 mm", pixels: "2551 × 6000 px" },
+      { name: "Mini", dimensions: "600 × 1600 mm", pixels: "1800 × 4800 px" }
+    ],
+    bleed: "10mm all sides",
+    safeZone: "50mm from bottom (hidden in base)",
+    resolution: "150 DPI at full size",
+    colourMode: "CMYK",
+    fileFormats: ["PDF", "AI", "EPS", "TIFF"],
+    tips: [
+      "Keep important content above 1000mm from base",
+      "Bottom 100-150mm may be hidden in the stand",
+      "Design at 50% scale, 300 DPI if file too large",
+      "Use bold text and high contrast for readability"
+    ]
+  },
+  booklets: {
+    title: "Booklets & Catalogues",
+    icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>',
+    sizes: [
+      { name: "A4 Portrait", dimensions: "210 × 297 mm", pixels: "2480 × 3508 px" },
+      { name: "A5 Portrait", dimensions: "148 × 210 mm", pixels: "1748 × 2480 px" },
+      { name: "Square (Medium)", dimensions: "210 × 210 mm", pixels: "2480 × 2480 px" },
+      { name: "US Letter", dimensions: "216 × 279 mm", pixels: "2551 × 3295 px" }
+    ],
+    bleed: "3mm all sides",
+    safeZone: "10mm from trim, 15mm spine edge",
+    resolution: "300 DPI",
+    colourMode: "CMYK",
+    fileFormats: ["PDF/X-1a (single pages)", "INDD (packaged)"],
+    tips: [
+      "Page count must be divisible by 4 for saddle stitch",
+      "Add spine allowance for perfect bound (check with printer)",
+      "Export as single pages, not spreads",
+      "Include page numbers outside safe zone"
+    ]
+  }
+};
+
+// Pre-flight checklist items
+const preflightItems = [
+  "Document set to CMYK colour mode",
+  "All images at 300 DPI minimum",
+  "Bleed extended 3mm beyond trim",
+  "Critical content within safe zone",
+  "Fonts outlined or embedded",
+  "Crop marks and bleed marks included",
+  "Links embedded (not linked)",
+  "Total ink coverage under 300%",
+  "Spell check completed",
+  "PDF exported as PDF/X-1a or Press Quality"
+];
+
+// ============================================
+// STATE
+// ============================================
+let activeProduct = 'businessCards';
+let preflightChecked = {};
+
+// Load saved state
+function loadState() {
+  const saved = localStorage.getItem('unlmtd-print-preflight');
+  if (saved) {
+    preflightChecked = JSON.parse(saved);
+  }
+}
+
+// Save state
+function saveState() {
+  localStorage.setItem('unlmtd-print-preflight', JSON.stringify(preflightChecked));
+}
+
+// ============================================
+// RENDER FUNCTIONS
+// ============================================
+
+function renderSpecCard() {
+  const spec = productSpecs[activeProduct];
+  const container = document.getElementById('specCardContainer');
+  
+  container.innerHTML = `
+    <div class="spec-card">
+      <div class="spec-card__header">
+        <div class="spec-card__icon">${spec.icon}</div>
+        <h3 class="spec-card__title">${spec.title}</h3>
+      </div>
+      <div class="spec-card__body">
+        <!-- Sizes Table -->
+        <div class="sizes-section">
+          <div class="sizes-section__label">Standard Sizes</div>
+          <table class="sizes-table">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Dimensions (mm)</th>
+                <th>Pixels @ 300 DPI</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${spec.sizes.map(size => `
+                <tr>
+                  <td class="sizes-table__format">${size.name}</td>
+                  <td class="sizes-table__dimensions">${size.dimensions}</td>
+                  <td class="sizes-table__dimensions">${size.pixels}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Specs Grid -->
+        <div class="specs-grid">
+          <div>
+            <ul class="specs-list">
+              <li class="specs-list__item">
+                <span class="specs-list__label">Bleed</span>
+                <span class="specs-list__value">${spec.bleed}</span>
+              </li>
+              <li class="specs-list__item">
+                <span class="specs-list__label">Safe Zone</span>
+                <span class="specs-list__value">${spec.safeZone}</span>
+              </li>
+              <li class="specs-list__item">
+                <span class="specs-list__label">Resolution</span>
+                <span class="specs-list__value">${spec.resolution}</span>
+              </li>
+              <li class="specs-list__item">
+                <span class="specs-list__label">Colour Mode</span>
+                <span class="specs-list__value">${spec.colourMode}</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="formats-section__label">Accepted File Formats</div>
+            <div class="formats-list">
+              ${spec.fileFormats.map(format => `
+                <span class="format-badge">${format}</span>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tips -->
+        <div class="tips-box">
+          <div class="tips-box__header">
+            <svg class="tips-box__icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+            <span class="tips-box__title">Pro Tips</span>
+          </div>
+          <ul class="tips-box__list">
+            ${spec.tips.map(tip => `
+              <li class="tips-box__item">
+                <svg class="tips-box__check" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                ${tip}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPreflightChecklist() {
+  const grid = document.getElementById('preflightGrid');
+  
+  grid.innerHTML = preflightItems.map((item, index) => `
+    <div class="preflight-item${preflightChecked[index] ? ' is-checked' : ''}" data-index="${index}">
+      <div class="preflight-checkbox">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <span class="preflight-label">${item}</span>
+    </div>
+  `).join('');
+  
+  // Add click handlers
+  grid.querySelectorAll('.preflight-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const index = item.dataset.index;
+      preflightChecked[index] = !preflightChecked[index];
+      saveState();
+      renderPreflightChecklist();
+    });
+  });
+}
+
+function updateTabs() {
+  document.querySelectorAll('.product-tab').forEach(tab => {
+    tab.classList.toggle('is-active', tab.dataset.product === activeProduct);
+  });
+}
+
+// ============================================
+// EVENT LISTENERS
+// ============================================
+
+// Product tabs
+document.getElementById('productTabs').addEventListener('click', (e) => {
+  const tab = e.target.closest('.product-tab');
+  if (tab) {
+    activeProduct = tab.dataset.product;
+    updateTabs();
+    renderSpecCard();
+  }
+});
+
+// Colour cards toggle
+document.querySelectorAll('.colour-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-expanded');
+  });
+});
+
+// ============================================
+// INIT
+// ============================================
+function init() {
+  loadState();
+  renderSpecCard();
+  renderPreflightChecklist();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+
+</body>
+</html>
